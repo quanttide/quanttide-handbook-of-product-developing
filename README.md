@@ -1,1 +1,3 @@
-#qtstaff-handbook-for-product-design
+# 量潮产品设计手册
+
+产品经理、设计师、前端工程师协调和规范产品设计工作的指导手册。

@@ -1,1 +1,3 @@
-#qtstaff-handbook-for-project-management
+# 项目管理手册
+
+项目管理领域的流程和规范，主要由项目管理部（Scrum Master）、项目负责人（项目经理）、管理层参与。

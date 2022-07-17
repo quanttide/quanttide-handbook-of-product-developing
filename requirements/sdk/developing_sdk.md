@@ -64,7 +64,7 @@ class APIClient:
 
 ## 模块化和Mixin模式
 
-云产品提供的API，少则数十（比如北极星SDK），多则数百甚至数千（比如腾讯云SDK）。如果集中实现在一个模块的一个APIClient类，则很不方便版本管理，多分支下很难同时不冲突PR。因此，为了提高可维护性，依照官方API文档的划分来划分SDK的模块是很有必要的。建议使用Mixin类实现具体API（在Python等语言是一种代码风格，在Dart等则有原生mixin支持），通过多重继承实现用户使用的APIClient。代码示例如下：
+云产品提供的API，少则数十（比如北极星SDK），多则数百甚至数千（比如腾讯云SDK）。如果集中实现在一个模块的一个APIClient类，则很不方便版本管理，多分支下很难同时不冲突PR。因此，为了提高可维护性，依照官方API文档的划分来划分SDK的模块是很有必要的。建议使用Mixin类实现具体API（在Python等语言是一种代码风格，在Dart等则有原生mixin支持），通过多重继承实现用户使用的APIClient。使用Mixin风格而不是普通的多重继承，主要是为了避免处理潜在的命名冲突，即"菱形问题"。代码示例如下：
 
 ```python
 # base.py
@@ -160,3 +160,7 @@ client = BeautifulAPIClient(secret_id='secret=id')
 ```
 
 遵循Python语言的习惯，可以让Python SDK提供的API更简洁易用。
+
+## 参考资料
+
+- [多重继承和Mixin](https://blog.hszofficial.site/TutorialForPython/语法篇/面向对象惯用法/多重继承和Mixin.html#:~:text=Mixin是一种非常谨慎的多重继承用法%2C它的特点是%3A%201%20Mixin%20类是单一职责的%202,Mixin%20类对宿主类一无所知%203%20不存在超类方法调用%28super%29以避免引入%20MRO%20查找顺序问题)

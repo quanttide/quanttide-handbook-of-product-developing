@@ -106,6 +106,12 @@ class IntegratedDepotAPIMixin:
     pass
 ```
 
+由于Python等动态语言在静态检查的固有缺陷，缺少原生mixin支持的Python，无法识别到mixin类使用的其他mixin或者上层API，从而对新加入的开发者理解实现造成比较大的困扰。此时建议使用全局搜索代替自动提醒，或者遵循命名和理解代码设计风格之后手动寻找。
+
+以上述为例。比如有个API叫做`list_projects`，通常会在`project`模块。如果找不到，则通过全局搜索找到此API的实现位置，如图所示。
+
+（此处补一张全局搜索的图）
+
 单元测试模块可以对应此模块划分。如果某个API的分支较多，建议独立其测试类以方便多人协同维护测试用例。测试时依然调用用户APIClient类，基于前文给的代码示例调用即可。代码示例：
 
 ```python
@@ -119,7 +125,6 @@ class ExampleTestCase(uniitest.TestCase):
         self.assertTrue(result)
         # other assertions
 ```
-
 
 ## 保持一致
 

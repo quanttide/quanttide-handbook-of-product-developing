@@ -15,8 +15,21 @@ client = APIClient(secret_id='secret-id', secret_key='secret_key')
 client.example_api(param_for_it='param-for-it')
 ```
 
-另外一种常见但不太简洁的做法是把云端服务建模到SDK内作为Provider，然后通过Client和Provider的通信实现同样的逻辑。基于此思路实现的SDK有阿里云的对象存储、北极星的Go语言SDK等。相比于上述过程式风格的API，这种建模思路更加面向对象。实际上并没有带来太多建模上的收益，往往还会更加复杂。由于Java等语言的固有限制，这样的建模是强制的；而对于Python等支持多种范式的语言，可以过程式就没有必要建过于复杂的对象模型，符合"奥卡姆剃刀"原则。
+为了方便多个SDK在同一个项目使用，通常APIClient类的命名带上产品名称。如果不带，则在import时写as语句。代码示例如下：
 
+```python
+# style 1
+from coding_devops_sdk import CodingOpenAPIClient
+from qcloud_sdk import QCloudAPIClient
+
+# style 2
+from coding_devops_sdk import APIClient as CodingOpenAPIClient
+from qcloud_sdk import APIClient as QCloudAPIClient
+```
+
+考虑在代码内部的可读性，用户在不使用后者的写法可以一眼可以看到是哪个APIClient，通常我们使用前者的代码风格。通过IDE提供的自动提醒，前者通常更容易输入，长一些可以通过自动补全，因此不太影响开发效率。
+
+另外一种常见但不太简洁的做法是把云端服务建模到SDK内作为Provider，然后通过Client和Provider的通信实现同样的逻辑。基于此思路实现的SDK有阿里云的对象存储、北极星的Go语言SDK等。相比于上述过程式风格的API，这种建模思路更加面向对象。实际上并没有带来太多建模上的收益，往往还会更加复杂。由于Java等语言的固有限制，这样的建模是强制的；而对于Python等支持多种范式的语言，可以过程式就没有必要建过于复杂的对象模型，符合"奥卡姆剃刀"原则。
 
 ## API分层
 
@@ -72,6 +85,41 @@ class APIMixin:
 class APIClient(BaseAPIClient, APIMixin):
     pass
 ```
+
+具体模块划分遵循同一功能维护到同一模块的原则，以方便组织不同开发者维护同一类API。此实践对于不熟悉库的开发者比较不友好，建议通过开发者文档解释具体的划分方式。比如Coding的OpenAPI文档划分为项目、仓库、CI等部分，每个部分对应一个模块。每个模块内部，通常把high-level API和integrated API的Mixin类分成两个，以方便二次开发时丢弃自定义逻辑较多的integrated API部分。此外，integrated API跨多个模块使用high-level API的情况也十分普遍，尽可能让代码正交有利于维护者理解。
+
+代码示例：
+
+```python
+# project.py
+class ProjectAPIMixin:
+    pass
+   
+class IntegratedProjectAPIMixin:
+    pass
+
+# depot.py
+class DepotAPI:
+    pass
+    
+class IntegratedDepotAPIMixin:
+    pass
+```
+
+单元测试模块可以对应此模块划分。如果某个API的分支较多，建议独立其测试类以方便多人协同维护测试用例。测试时依然调用用户APIClient类，基于前文给的代码示例调用即可。代码示例：
+
+```python
+# tests/client.py
+client = APIClient()
+
+# tests/test_example.py
+class ExampleTestCase(uniitest.TestCase):
+    def test_example_api(self):
+        result = client.example_api()
+        self.assertTrue(result)
+        # other assertions
+```
+
 
 ## 保持一致
 

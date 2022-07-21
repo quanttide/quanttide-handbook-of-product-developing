@@ -60,7 +60,7 @@ class APIClient:
         integrated API
         """
         self.example_api(self)
-```       
+```
 
 ## 模块化和Mixin模式
 
@@ -106,12 +106,6 @@ class IntegratedDepotAPIMixin:
     pass
 ```
 
-由于Python等动态语言在静态检查的固有缺陷，缺少原生mixin支持的Python，无法识别到mixin类使用的其他mixin或者上层API，从而对新加入的开发者理解实现造成比较大的困扰。此时建议使用全局搜索代替自动提醒，或者遵循命名和理解代码设计风格之后手动寻找。
-
-以上述为例。比如有个API叫做`list_projects`，通常会在`project`模块。如果找不到，则通过全局搜索找到此API的实现位置，如图所示。
-
-（此处补一张全局搜索的图）
-
 单元测试模块可以对应此模块划分。如果某个API的分支较多，建议独立其测试类以方便多人协同维护测试用例。测试时依然调用用户APIClient类，基于前文给的代码示例调用即可。代码示例：
 
 ```python
@@ -125,6 +119,18 @@ class ExampleTestCase(uniitest.TestCase):
         self.assertTrue(result)
         # other assertions
 ```
+
+由于Python等动态语言在静态检查的固有缺陷，缺少原生mixin支持的Python，无法识别到mixin类使用的其他mixin或者上层API，从而对新加入的开发者理解实现造成比较大的困扰。此时建议使用全局搜索代替自动提醒，或者遵循命名和理解代码设计风格之后手动寻找。
+
+以上述为例。比如有个API叫做`list_projects`，通常会在`project`模块。如果找不到，则通过全局搜索找到此API的实现位置。macOS快捷键为“Command+Shift+F”，Windows快捷键为“Ctrl+Shift+F”。
+
+以腾讯云SDK的`request_api`为例。
+
+![待搜索目标](search_1.png)
+
+通过快捷键打开全局搜索，在结果中找到`def request_api`即为原始定义位置。
+
+![搜索结果](search_2.png)
 
 ## 保持一致
 

@@ -1,0 +1,118 @@
+### structure of a book
+#format: jb-book
+#root: index.md
+#parts:
+#  - title: 简介
+#    chapters:
+#      - file: introduction/introduction.md
+#  - title: 交互设计
+#    chapters:
+#      - file: interactive_design/interactive_design.md
+#  - title: 软件架构
+#    chapters:
+#      - file: software_architecture/technical_selection/user_selection/user_selection.md
+#        title: 客户端选型
+#      - file: software_architecture/technical_selection/web_selection/web_selection.md
+#        title: web选型
+#      - file: software_architecture/business_modeling/domain_driven_design/domain_driven_design.md
+#        title: 领域驱动设计
+#      - file: software_architecture/business_modeling/event_driven_design/event_driven_design.md
+#        title: 事件驱动设计
+#  - title: 项目管理
+#    chapters:
+#      - file: project_management/project_management.md
+#        sections:
+#          - file: project_management/process_for_validating_engineering_standards/process_for_validating_engineering_standards.md
+#            title: 验证工程标准的流程
+#  - title: 质量保证
+#    chapters:
+#      - file: quality_assurance/quality_assurance.md
+#  - title: 产品全景图
+#    chapters:
+#      - file: product_panorama/user_story_map/user_story_map.md
+#        title: 用户故事地图
+#      - file: product_panorama/user_story_document/user_story_document.md
+#        title: 用户故事文档
+
+#
+format: jb-book
+root: index.md
+parts:
+  - caption: 职能
+    chapters:
+    - file: functions/project_management/project_management.md
+      sections:
+        - file: functions/project_management/process_for_validating_engineering_standards/process_for_validating_engineering_standards.md
+        - file: functions/project_management/quality_assurance/quality_assurance.md
+    - file: functions/product_planning/product_planning.md
+    - file: functions/interactive_design/interactive_design.md
+    - file: functions/architecture_design/architecture_design.md
+      sections:
+        - file: functions/architecture_design/software_architecture/software_architecture.md
+          sections:
+            - file: functions/architecture_design/software_architecture/business_modeling/business_modeling.md
+              sections:
+                - file: functions/architecture_design/software_architecture/business_modeling/domain_driven_design/domain_driven_design.md
+                - file: functions/architecture_design/software_architecture/business_modeling/event_driven_design/event_driven_design.md
+            - file: functions/architecture_design/software_architecture/technical_selection/technical_selection.md
+              sections:
+                - file: functions/architecture_design/software_architecture/technical_selection/users_side_selection/users_side_selection.md
+                - file: functions/architecture_design/software_architecture/technical_selection/web_side_selection/web_side_selection.md
+    - file: functions/client_side_development/client_side_development.md
+    - file: functions/server_side_development/server_side_development.md
+    - file: functions/technical_writing/technical_writing.md
+  - caption: 协作
+    chapters:
+    - file: interactive_works/product_panorama/product_panorama.md
+      title: 产品全景图
+      sections:
+        - file: interactive_works/product_panorama/users_story_documents/users_story_documents.md
+        - file: interactive_works/product_panorama/users_story_maps/users_story_maps.md
+    - file: interactive_works/design_language/design_language.md
+    - file: interactive_works/domain_model/domain_model.md
+    - file: interactive_works/api/api.md
+#
+#
+#
+#### structure of a book
+##
+##format: jb-book
+##root: index.md
+##parts:
+##  - caption: 简介
+##    chapters:
+##      - file: introduction/introduction.md
+##  - caption: 交互设计
+##    chapters:
+##      - file: interactive_design/interactive_design.md
+##  - caption: 软件架构
+##    chapters:
+##      - file: software_architecture/technical_selection/technical_selection.md
+##        title: 技术选型
+##        sections:
+##          - file: software_architecture/technical_selection/user_selection/user_selection.md
+##            title: 客户端选型
+##          - file: software_architecture/technical_selection/web_selection/web_selection.md
+##            title: web选型
+##      - file: software_architecture/business_modeling/business_modeling.md
+##        title: 业务建模
+##        sections:
+##          - file: software_architecture/business_modeling/domain_driven_design/domain_driven_design.md
+##            title: 领域驱动设计
+##          - file: software_architecture/business_modeling/event_driven_design/event_driven_design.md
+##            title: 事件驱动设计
+##  - caption: 项目管理
+##    chapters:
+##      - file: project_management/project_management.md
+##        sections:
+##          - file: project_management/process_for_validating_engineering_standards/process_for_validating_engineering_standards.md
+##            title: 验证工程标准的流程
+##  - caption: 质量保证
+##    chapters:
+##      - file: quality_assurance/quality_assurance.md
+##  - caption: 产品全景图
+##    chapters:
+##      - file: product_panorama/user_story_map/user_story_map.md
+##        title: 用户故事地图
+##      - file: product_panorama/user_story_document/user_story_document.md
+##        title: 用户故事文档

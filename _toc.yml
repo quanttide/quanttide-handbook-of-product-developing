@@ -5,33 +5,33 @@ root: index.md
 parts:
   - caption: 职能
     chapters:
-    - file: functions/project_management/project_management.md
+    - file: functions/project_management/README.md
       sections:
-        - file: functions/project_management/process_for_validating_engineering_standards/process_for_validating_engineering_standards.md
-        - file: functions/project_management/quality_assurance/quality_assurance.md
-    - file: functions/product_planning/product_planning.md
-    - file: functions/interactive_designs/interactive_designs.md
-    - file: functions/architecture_design/architecture_design.md
+        - file: functions/project_management/process_for_validating_engineering_standards/README.md
+        - file: functions/project_management/quality_assurance/README.md
+    - file: functions/product_planning/README.md
+    - file: functions/interactive_designs/README.md
+    - file: functions/architecture_design/README.md
       sections:
-        - file: functions/architecture_design/software_architectures/software_architectures.md
+        - file: functions/architecture_design/software_architectures/README.md
           sections:
-            - file: functions/architecture_design/software_architectures/business_modeling/business_modeling.md
+            - file: functions/architecture_design/software_architectures/business_modeling/README.md
               sections:
-                - file: functions/architecture_design/software_architectures/business_modeling/domain_driven_design/domain_driven_design.md
-                - file: functions/architecture_design/software_architectures/business_modeling/event_driven_design/event_driven_design.md
-            - file: functions/architecture_design/software_architectures/technical_selection/technical_selection.md
+                - file: functions/architecture_design/software_architectures/business_modeling/domain_driven_design/README.md
+                - file: functions/architecture_design/software_architectures/business_modeling/event_driven_design/README.md
+            - file: functions/architecture_design/software_architectures/technical_selection/README.md
               sections:
-                - file: functions/architecture_design/software_architectures/technical_selection/users_side_selection/users_side_selection.md
-                - file: functions/architecture_design/software_architectures/technical_selection/web_side_selection/web_side_selection.md
-    - file: functions/client_side_development/client_side_development.md
-    - file: functions/server_side_development/server_side_development.md
-    - file: functions/technical_writing/technical_writing.md
+                - file: functions/architecture_design/software_architectures/technical_selection/users_side_selection/README.md
+                - file: functions/architecture_design/software_architectures/technical_selection/web_side_selection/README.md
+    - file: functions/client_side_development/README.md
+    - file: functions/server_side_development/README.md
+    - file: functions/technical_writing/README.md
   - caption: 协作
     chapters:
-    - file: interactive_works/product_panorama/product_panorama.md
+    - file: collaboration/product_panorama/README.md
       sections:
-        - file: interactive_works/product_panorama/users_story_documents/users_story_documents.md
-        - file: interactive_works/product_panorama/users_story_maps/users_story_maps.md
-    - file: interactive_works/design_language/design_language.md
-    - file: interactive_works/domain_model/domain_model.md
-    - file: interactive_works/api/api.md
+        - file: collaboration/product_panorama/users_story_documents/README.md
+        - file: collaboration/product_panorama/users_story_maps/README.md
+    - file: collaboration/design_language/README.md
+    - file: collaboration/domain_model/README.md
+    - file: collaboration/api/README.md

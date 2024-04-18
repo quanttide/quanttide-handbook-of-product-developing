@@ -6,32 +6,46 @@ parts:
   - caption: 职能
     chapters:
     - file: functions/project_management/README.md
-      sections:
-        - file: functions/project_management/process_for_validating_engineering_standards/README.md
-        - file: functions/project_management/quality_assurance/README.md
     - file: functions/product_planning/README.md
+      sections:
+        - file: functions/product_planning/user_research/README.md
+          sections:
+            - file: functions/product_planning/user_research/basic_steps.md
+            - file: functions/product_planning/user_research/talks.md
+        - file: functions/product_planning/requirements_sorts/README.md
+        - file: functions/product_planning/competitive_product_analysis/README.md
+        - file: functions/product_planning/design_prototype/README.md
     - file: functions/interactive_designs/README.md
     - file: functions/architecture_design/README.md
       sections:
-        - file: functions/architecture_design/software_architectures/README.md
-          sections:
-            - file: functions/architecture_design/software_architectures/business_modeling/README.md
-              sections:
-                - file: functions/architecture_design/software_architectures/business_modeling/domain_driven_design/README.md
-                - file: functions/architecture_design/software_architectures/business_modeling/event_driven_design/README.md
-            - file: functions/architecture_design/software_architectures/technical_selection/README.md
-              sections:
-                - file: functions/architecture_design/software_architectures/technical_selection/users_side_selection/README.md
-                - file: functions/architecture_design/software_architectures/technical_selection/web_side_selection/README.md
+          - file: functions/architecture_design/business_modeling/README.md
+            sections:
+              - file: functions/architecture_design/business_modeling/domain_driven_design/README.md
+              - file: functions/architecture_design/business_modeling/event_driven_design/README.md
+          - file: functions/architecture_design/technical_selection/README.md
+            sections:
+              - file: functions/architecture_design/technical_selection/users_side_selection/README.md
+              - file: functions/architecture_design/technical_selection/web_side_selection/README.md
     - file: functions/client_side_development/README.md
+      sections:
+        - file: functions/client_side_development/mobile_side/README.md
+        - file: functions/client_side_development/desktop_side/README.md
+        - file: functions/client_side_development/web_side/README.md
+        - file: functions/client_side_development/cross_side/README.md
+          sections:
+            - file: functions/client_side_development/cross_side/flutter.md
+            - file: functions/client_side_development/cross_side/react_native.md
     - file: functions/server_side_development/README.md
+    - file: functions/quality_assurance/README.md
     - file: functions/technical_writing/README.md
   - caption: 协作
     chapters:
     - file: collaboration/product_panorama/README.md
       sections:
-        - file: collaboration/product_panorama/users_story_documents/README.md
+        - file: collaboration/product_panorama/event_storm/README.md
         - file: collaboration/product_panorama/users_story_maps/README.md
+          sections:
+            - file: collaboration/product_panorama/users_story_maps/users_story_documents/README.md
     - file: collaboration/design_language/README.md
     - file: collaboration/domain_model/README.md
     - file: collaboration/api/README.md

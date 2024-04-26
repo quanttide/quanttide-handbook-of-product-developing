@@ -38,6 +38,7 @@ parts:
     - file: functions/server_side_development/README.md
     - file: functions/quality_assurance/README.md
     - file: functions/technical_writing/README.md
+    - file: functions/marketing/README.md
   - caption: 协作
     chapters:
     - file: collaboration/product_panorama/README.md
